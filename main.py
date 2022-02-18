@@ -13,7 +13,7 @@ def startLog():
     for everything in root.winfo_children():
         everything.destroy()
 
-    #name
+    #name 
     name_label = Label(root, text = 'Enter username:')
     name_label.place(x=20, y=30)
 
