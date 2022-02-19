@@ -63,12 +63,12 @@ def startLog():
 
                     # if password is not in the database
                     else:
-                        shortP_label = Label(root, text = 'Incorrect password   ')
+                        shortP_label = Label(root, text = 'Incorrect name or password   ')
                         shortP_label.place(x=20, y=110)
                 
                 #if password is too short
                 else:
-                    shortP_label = Label(root, text = 'Password is too short')
+                    shortP_label = Label(root, text = 'Password is too short' + 10*'    ')
                     shortP_label.place(x=20, y=110)
 
             #if name is not in the database
