@@ -38,13 +38,12 @@ def startLog():
         lineIndex = -1
 
         f = open("database.txt", "r")
-
         #checking if if possible for this name to be in the database according to its length
-        if len(name) >= 5 and name[-1] == '~':
+        if len(name) >= 5 :
             #if it is possible then checking for name
             for line in f:
                 lineIndex+=1
-                if name in line:
+                if name + '~' in line:    #at the end of every name in database
                     nameInDatabase = True
                     break
             
