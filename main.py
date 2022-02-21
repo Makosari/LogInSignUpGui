@@ -2,7 +2,6 @@ from tkinter import *
 from tkinter import ttk
 import linecache
 
-
 root = Tk()
 root.title('LogIn')
 root.geometry('400x150')
@@ -176,10 +175,13 @@ def startSign():
     confirmButton = Button(root, text='Sign up', command= sign, width=10)
     confirmButton.place(x=300, y=100)
 
+passwordDontMatch_label = Label(root, text = 'welcome to our site')
+passwordDontMatch_label.place(x=145, y=15)
+
 logInButton = Button(root, text='log in', command= startLog, width=10)
-logInButton.place(x=260, y=50)
+logInButton.place(x=260, y=60)
 
 SignUpButton = Button(root, text='sign up', command=startSign, width=10)
-SignUpButton.place(x=60, y=50)
+SignUpButton.place(x=60, y=60)
 
 root.mainloop()
