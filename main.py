@@ -14,18 +14,18 @@ def startLog():
 
     #name 
     name_label = Label(root, text = 'Enter username:')
-    name_label.place(x=20, y=30)
+    name_label.place(x=40, y=40)
 
     name_entry = ttk.Entry()
-    name_entry.place(x= 125, y = 30)
+    name_entry.place(x= 145, y = 40)
 
 
     #password
     password_label = Label(root, text = 'Enter password:')
-    password_label.place(x=20, y=80)
+    password_label.place(x=40, y=80)
 
     password_entry = ttk.Entry()
-    password_entry.place(x= 125, y = 80)
+    password_entry.place(x= 145, y = 80)
 
 
     #logging system
@@ -86,6 +86,9 @@ def startLog():
     confirmButton = Button(root, text='log in', command= log, width=10)
     confirmButton.place(x=300, y=100)
 
+    backButton = Button(root, text='back', command= goBack, width=10)
+    backButton.place(x=20, y=5)
+
 def startSign():
 
     for everything in root.winfo_children():
@@ -93,25 +96,25 @@ def startSign():
 
     #name 
     name_label = Label(root, text = 'Enter username:')
-    name_label.place(x=20, y=30)
+    name_label.place(x=40, y=30)
 
     name_entry = ttk.Entry()
-    name_entry.place(x= 130, y = 30)
+    name_entry.place(x= 150, y = 30)
 
 
     #password
     password_label = Label(root, text = 'Enter password:')
-    password_label.place(x=20, y=70)
+    password_label.place(x=40, y=70)
 
     password_entry = ttk.Entry()
-    password_entry.place(x= 130, y = 70)
+    password_entry.place(x= 150, y = 70)
 
     #confirm password
     password_label = Label(root, text = 'Confirm password:')
-    password_label.place(x=20, y=105)
+    password_label.place(x=40, y=105)
 
     confirmPassword_entry = ttk.Entry()
-    confirmPassword_entry.place(x= 130, y = 105)
+    confirmPassword_entry.place(x= 150, y = 105)
 
 
     #Signing system
@@ -174,6 +177,20 @@ def startSign():
     #button for log in
     confirmButton = Button(root, text='Sign up', command= sign, width=10)
     confirmButton.place(x=300, y=100)
+
+    backButton = Button(root, text='back', command= goBack, width=10)
+    backButton.place(x=20, y=5)
+
+def goBack():
+
+    for everything in root.winfo_children():
+        everything.destroy()
+
+    logInButton = Button(root, text='log in', command= startLog, width=10)
+    logInButton.place(x=260, y=60)
+
+    SignUpButton = Button(root, text='sign up', command=startSign, width=10)
+    SignUpButton.place(x=60, y=60)
 
 passwordDontMatch_label = Label(root, text = 'welcome to our site')
 passwordDontMatch_label.place(x=145, y=15)
