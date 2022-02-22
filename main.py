@@ -3,9 +3,21 @@ from tkinter import ttk
 import linecache
 
 root = Tk()
-root.title('LogIn')
+root.title('GUI')
 root.geometry('400x150')
 
+def menu():
+    for everything in root.winfo_children():
+        everything.destroy()
+
+    passwordDontMatch_label = Label(root, text = 'welcome to our site')
+    passwordDontMatch_label.place(x=145, y=15)
+
+    logInButton = Button(root, text='log in', command= startLog, width=10)
+    logInButton.place(x=260, y=60)
+
+    SignUpButton = Button(root, text='sign up', command=startSign, width=10)
+    SignUpButton.place(x=60, y=60)
 
 def startLog():
     
@@ -57,8 +69,10 @@ def startLog():
                     if password in passCheck:
                         for everything in root.winfo_children():
                             everything.destroy()
-                        correctP_label = Label(root, text = 'You are logged in')
+                        correctP_label = Label(root, text = f'{name} is logged in')
                         correctP_label.place(x=150, y=50)
+                        confirmButton = Button(root, text='log out',command=menu, width=10)
+                        confirmButton.place(x=300, y=100)
 
                     # if password is not in the database
                     else:
@@ -192,13 +206,6 @@ def goBack():
     SignUpButton = Button(root, text='sign up', command=startSign, width=10)
     SignUpButton.place(x=60, y=60)
 
-passwordDontMatch_label = Label(root, text = 'welcome to our site')
-passwordDontMatch_label.place(x=145, y=15)
-
-logInButton = Button(root, text='log in', command= startLog, width=10)
-logInButton.place(x=260, y=60)
-
-SignUpButton = Button(root, text='sign up', command=startSign, width=10)
-SignUpButton.place(x=60, y=60)
+menu()
 
 root.mainloop()
