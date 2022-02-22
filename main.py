@@ -10,8 +10,8 @@ def menu():
     for everything in root.winfo_children():
         everything.destroy()
 
-    passwordDontMatch_label = Label(root, text = 'welcome to our site')
-    passwordDontMatch_label.place(x=145, y=15)
+    passwordDontMatch_label = Label(root, text = 'WELCOME')
+    passwordDontMatch_label.place(x=170, y=15)
 
     logInButton = Button(root, text='log in', command= startLog, width=10)
     logInButton.place(x=260, y=60)
@@ -49,7 +49,7 @@ def startLog():
         lineIndex = -1
 
         f = open("database.txt", "r")
-        #checking if if possible for this name to be in the database according to its length
+        #checking if possible for this name to be in the database according to its length
         if len(name) >= 5 :
             #if it is possible then checking for name
             for line in f:
@@ -154,7 +154,6 @@ def startSign():
             nameShort_label = Label(root, text = 'Name is too short' + 10*'     ')
             nameShort_label.place(x=260, y=30)
 
-            #tu
             blankIt_label = Label(root, text = 20 * '      ')
             blankIt_label.place(x=20, y=130)
         
@@ -162,7 +161,6 @@ def startSign():
             nameUnavailable_label = Label(root, text = 'Name is already used')
             nameUnavailable_label.place(x=260, y=30)
 
-            #tu
             blankIt1_label = Label(root, text = 20 * '      ')
             blankIt1_label.place(x=20, y=130)
 
@@ -186,9 +184,6 @@ def startSign():
 
         f.close()
 
-        
-
-    #button for log in
     confirmButton = Button(root, text='Sign up', command= sign, width=10)
     confirmButton.place(x=300, y=100)
 
