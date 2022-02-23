@@ -4,17 +4,17 @@ import linecache
 
 root = Tk()
 root.title('GUI')
-root.geometry('400x150')
+root.geometry('420x170')
 
 def menu():
     for everything in root.winfo_children():
         everything.destroy()
 
     passwordDontMatch_label = Label(root, text = 'WELCOME')
-    passwordDontMatch_label.place(x=170, y=15)
+    passwordDontMatch_label.place(x=185, y=15)
 
     logInButton = Button(root, text='log in', command= startLog, width=10)
-    logInButton.place(x=260, y=60)
+    logInButton.place(x=270, y=60)
 
     SignUpButton = Button(root, text='sign up', command=startSign, width=10)
     SignUpButton.place(x=60, y=60)
@@ -152,14 +152,14 @@ def startSign():
                     break
         else:
             nameShort_label = Label(root, text = 'Name is too short' + 10*'     ')
-            nameShort_label.place(x=260, y=30)
+            nameShort_label.place(x=280, y=30)
 
             blankIt_label = Label(root, text = 20 * '      ')
             blankIt_label.place(x=20, y=130)
         
         if nameInDatabase == True:
             nameUnavailable_label = Label(root, text = 'Name is already used')
-            nameUnavailable_label.place(x=260, y=30)
+            nameUnavailable_label.place(x=280, y=30)
 
             blankIt1_label = Label(root, text = 20 * '      ')
             blankIt1_label.place(x=20, y=130)
